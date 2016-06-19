@@ -137,10 +137,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\app.js" />
+    <Content Include="App\controllers\homeController.js" />
+    <Content Include="App\partials\products.html" />
+    <Content Include="App\services\sushiFactory.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\images\arrow-right.png" />
     <Content Include="Content\css\images\background-image.png" />
     <Content Include="Content\css\images\item-separator.png" />
     <Content Include="Content\css\images\logo.png" />
@@ -210,6 +215,7 @@
     <Content Include="Images\200\tekka-maki.jpg" />
     <Content Include="Images\200\tori-katsu.jpg" />
     <Content Include="Images\200\yaki-udon.jpg" />
+    <Content Include="Images\Icon\sushi.png" />
     <Content Include="Scripts\angular-1.5.6\angular-animate.js" />
     <Content Include="Scripts\angular-1.5.6\angular-animate.min.js" />
     <Content Include="Scripts\angular-1.5.6\angular-aria.js" />
@@ -3540,7 +3546,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\toastr.min.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

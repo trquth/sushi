@@ -40,6 +40,10 @@ namespace SuShiSPA
                 "~/Scripts/kendo/2016.1.226/kendo.angular.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/sushijs").Include(
                      "~/Content/js/sushi.js"));
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                    "~/App/app.js",
+                    "~/App/controllers/homeController.js",
+                    "~/App/services/sushiFactory.js"));
         }
     }
 }
