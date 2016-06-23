@@ -25,5 +25,9 @@ namespace SuShiSPA.Controllers
         {
             return View();
         }
+        public ActionResult Del2()
+        {
+            return View();
+        }
     }
 }
