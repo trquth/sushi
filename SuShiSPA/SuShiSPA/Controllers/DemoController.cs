@@ -13,5 +13,9 @@ namespace SuShiSPA.Controllers
         {
             return View();
         }
+        public ActionResult Detail()
+        {
+            return View();
+        }
     }
 }
