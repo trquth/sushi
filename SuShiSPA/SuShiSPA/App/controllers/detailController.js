@@ -1,4 +1,4 @@
-﻿sushiApp.controller("detailController", function ($scope, sushiFactory, product) {
+﻿sushiApp.controller("detailController", function ($scope, $routeParams, sushiFactory) {
     //var Id = ($routeParams.Id) ? parseInt($routeParams.Id) : 0;
     //var object = JSON.stringify({
     //    "CallerKey": "Not Use Now",
@@ -9,7 +9,18 @@
     //        }]
     //})
     //jsonDataObj = JSON.stringify(object);
-    var original = product;
-    $scope.product = angular.copy(original);
-
+    var Id = $routeParams.productId;
+    var TheSscRequest = {
+        CallerKey: "Not Use Now",
+        CommandId: -10,
+        RequestParams:
+            [{
+                "Id": Id
+            }]
+    }
+    jsonDataObj = JSON.stringify(TheSscRequest);
+    sushiFactory.getProduct(TheSscRequest).then(function (response) {
+        $scope.product = angular.copy(response.dat);
+    });
+    //var original = product;
 });
