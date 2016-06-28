@@ -34,7 +34,8 @@ namespace SuShiSPA
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                      "~/Scripts/angular-1.5.6/angular.min.js",
                      "~/Scripts/angular-1.5.6/angular-route.min.js",
-                     "~/Scripts/angular-1.5.6/angular-animate.min.js"));
+                     "~/Scripts/angular-1.5.6/angular-animate.min.js",
+                     "~/Scripts/jquery - 2.2.3.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
                 "~/Scripts/kendo/2016.1.226/kendo.web.min.js",
                 "~/Scripts/kendo/2016.1.226/kendo.angular.min.js"));
@@ -43,6 +44,7 @@ namespace SuShiSPA
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                     "~/App/app.js",
                     "~/App/controllers/homeController.js",
+                    "~/App/controllers/detailController.js",
                     "~/App/services/sushiFactory.js"));
         }
     }

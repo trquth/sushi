@@ -2,7 +2,7 @@
     <div>
         <ul id="main" class="k-widget k-listview" role="listbox">
             <li class="products" ng-repeat="product in products">
-                <a class="view-details" href="#">
+                <a class="view-details" href="#/detail-product/{{product.Id}}">
                     <img class="main-image"  ng-src="/Images/200/{{product.Image}}" alt="{{product.Name}}" title="{{product.Name}}">
                     <strong data-bind="text: name">{{product.Name}}</strong>
                     <span class="price"><span>$</span><span data-bind="text: price">{{product.Price}}</span></span>
