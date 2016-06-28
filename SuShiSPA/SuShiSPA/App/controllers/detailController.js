@@ -1,4 +1,4 @@
-﻿sushiApp.controller("detailController", function ($scope, $rootScope, $location, $routeParams, sushiFactory, product) {
+﻿sushiApp.controller("detailController", function ($scope, sushiFactory, product) {
     //var Id = ($routeParams.Id) ? parseInt($routeParams.Id) : 0;
     //var object = JSON.stringify({
     //    "CallerKey": "Not Use Now",

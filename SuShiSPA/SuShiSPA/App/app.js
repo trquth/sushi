@@ -11,34 +11,27 @@ sushiApp.config(["$routeProvider", function ($routeProvider) {
         resolve: {
             product: function (sushiFactory, $route) {
                 var Id = $route.current.params.productId;
-                var object = {
+                var TheSscRequest = {
                     CallerKey: "Not Use Now",
-                    CommandId: -1,
+                    CommandId: -10,
                     RequestParams:
                         [{
                             "Id": Id
                         }]
                 }
                 //jsonDataObj = JSON.stringify(object);
-                return sushiFactory.getProduct(object).then(function (response) {
+                return sushiFactory.getProduct(TheSscRequest).then(function (response) {
                     return  response.data;
                 });
             }
         }
-    })
-    .otherwise({
+    }).otherwise({
         redirectTo: "/"
     });
 }])
-sushiApp.config(function ($httpProvider) {
+sushiApp.config(['$httpProvider', function ($httpProvider) {
     //Enable cross domain calls
     $httpProvider.defaults.useXDomain = true;
-});
-sushiApp.config(function ($httpProvider) {
-
-    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
-});
-sushiApp.config(['$httpProvider', function ($httpProvider) {
     // Intercept POST requests, convert to standard form encoding
     $httpProvider.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
     $httpProvider.defaults.transformRequest.unshift(function (data, headersGetter) {
@@ -46,7 +39,6 @@ sushiApp.config(['$httpProvider', function ($httpProvider) {
 
         if (typeof data === "string")
             return data;
-
         for (key in data) {
             if (data.hasOwnProperty(key))
                 result.push(encodeURIComponent(key) + "=" + encodeURIComponent(data[key]));
