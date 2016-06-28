@@ -1,0 +1,33 @@
+﻿<section id="content" ng-controller="detailController">
+    <div id="details" >
+        <a id="navigate-prev"></a><div id="detail-info">
+            <img class="main-image" ng-src="/Images/200/{{product.Image}}"
+                 alt="Selected Product" title="Selected Product" />
+            <div id="description">
+                <h1></h1>
+                <p></p>
+                <div id="details-total">
+                    <p id="price-quantity"></p>
+                    <button class="buy">Add to cart</button>
+                </div>
+            </div>
+        </div><div id="nutrition-info">
+            <h2>Nutritional Information</h2>
+            <dl>
+                <dt>Protein</dt>
+                <dd></dd>
+                <dt>Fat (total)</dt>
+                <dd></dd>
+                <dt>Carbohydrate</dt>
+                <dd></dd>
+                <dt>Energy (kJ)</dt>
+                <dd></dd>
+                <dt>Energy (kcal)</dt>
+                <dd></dd>
+                <dt>Sugar</dt>
+                <dd></dd>
+            </dl>
+        </div><a id="navigate-next"></a>
+    </div>
+    <div id="details-bottom-image"></div>
+</section>

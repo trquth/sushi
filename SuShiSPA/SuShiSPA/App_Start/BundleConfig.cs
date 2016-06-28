@@ -43,9 +43,10 @@ namespace SuShiSPA
                      "~/Content/js/sushi.js"));
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                     "~/App/app.js",
+                    "~/App/services/sushiFactory.js",
                     "~/App/controllers/homeController.js",
-                    "~/App/controllers/detailController.js",
-                    "~/App/services/sushiFactory.js"));
+                    "~/App/controllers/detailController.js"
+                    ));
         }
     }
 }
