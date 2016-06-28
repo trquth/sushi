@@ -9,3 +9,7 @@ sushiApp.config(["$routeProvider", function ($routeProvider) {
         redirectTo: "/"
     });
 }])
+sushiApp.config(function ($httpProvider) {
+    //Enable cross domain calls
+    $httpProvider.defaults.useXDomain = true;
+});
