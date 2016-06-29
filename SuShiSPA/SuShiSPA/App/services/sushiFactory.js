@@ -1,10 +1,10 @@
 ﻿sushiApp.factory("sushiFactory", ["$http", function ($http) {
     var serviceBase = "http://localhost:49663/api/product/";
     var obj = {};
-    obj.getProducts = function (data) {
-        return $http.post(serviceBase + "getlistproducts", data)}
-    obj.getProduct = function (jsondata) {
-        return $http.post(serviceBase + "getproductbyId", { Test:10 });
+    obj.getProducts = function () {
+        return $http.get(serviceBase + "getlistproductsaj")}
+    obj.getProduct = function (id) {
+        return $http.get(serviceBase + "getproductbyIdaj" + "?Id=" + id);
     }
     return obj;
 }]);

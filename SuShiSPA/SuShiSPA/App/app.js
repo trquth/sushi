@@ -6,7 +6,7 @@ sushiApp.config(["$routeProvider", function ($routeProvider) {
         controller: "homeController"
     }).when("/detail-product/:productId", {
         title: "Sushi",
-        templateUrl: "App/partials/detailproduct.html",
+        templateUrl: "App/partials/product.html",
         controller: "detailController",
         resolve: {
             //product: ["sushiFactory", "$route", function (sushiFactory, $route) {
@@ -32,8 +32,6 @@ sushiApp.config(["$routeProvider", function ($routeProvider) {
     });
 }])
 sushiApp.config(['$httpProvider', function ($httpProvider) {
-    //Enable cross domain calls
-    $httpProvider.defaults.useXDomain = true;
     // Intercept POST requests, convert to standard form encoding
     $httpProvider.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
     //$httpProvider.defaults.transformRequest.unshift(function (data, headersGetter) {
@@ -56,39 +54,36 @@ sushiApp.config(['$httpProvider', function ($httpProvider) {
      * @param {Object} obj
      * @return {String}
      */
-    var param = function (obj) {
-        var query = '', name, value, fullSubName, subName, subValue, innerObj, i;
+    //var param = function (obj) {
+    //    var query = '', name, value, fullSubName, subName, subValue, innerObj, i;
+    //    for (name in obj) {
+    //        value = obj[name];
+    //        if (value instanceof Array) {
+    //            for (i = 0; i < value.length; ++i) {
+    //                subValue = value[i];
+    //                fullSubName = name + '[' + i + ']';
+    //                innerObj = {};
+    //                innerObj[fullSubName] = subValue;
+    //                query += param(innerObj) + '&';
+    //            }
+    //        }
+    //        else if (value instanceof Object) {
+    //            for (subName in value) {
+    //                subValue = value[subName];
+    //                fullSubName = name + '[' + subName + ']';
+    //                innerObj = {};
+    //                innerObj[fullSubName] = subValue;
+    //                query += param(innerObj) + '&';
+    //            }
+    //        }
+    //        else if (value !== undefined && value !== null)
+    //            query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
+    //    }
 
-        for (name in obj) {
-            value = obj[name];
-
-            if (value instanceof Array) {
-                for (i = 0; i < value.length; ++i) {
-                    subValue = value[i];
-                    fullSubName = name + '[' + i + ']';
-                    innerObj = {};
-                    innerObj[fullSubName] = subValue;
-                    query += param(innerObj) + '&';
-                }
-            }
-            else if (value instanceof Object) {
-                for (subName in value) {
-                    subValue = value[subName];
-                    fullSubName = name + '[' + subName + ']';
-                    innerObj = {};
-                    innerObj[fullSubName] = subValue;
-                    query += param(innerObj) + '&';
-                }
-            }
-            else if (value !== undefined && value !== null)
-                query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
-        }
-
-        return query.length ? query.substr(0, query.length - 1) : query;
-    };
-
-    // Override $http service's default transformRequest
-    $httpProvider.defaults.transformRequest = [function (data) {
-        return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
-    }];
+    //    return query.length ? query.substr(0, query.length - 1) : query;
+    //};
+    //// Override $http service's default transformRequest
+    //$httpProvider.defaults.transformRequest = [function (data) {
+    //    return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
+    //}];
 }]);

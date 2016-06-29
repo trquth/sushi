@@ -26,11 +26,14 @@ namespace SuShiSPA
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
-            bundles.Add(new StyleBundle("~/bundles/sushicss").Include(
-                      "~/Content/css/style.css",
+            bundles.Add(new StyleBundle("~/bundles/sushicss").Include(                     
                       "~/Content/css/kendo.common.min.css",
                       "~/Content/css/kendo.rtl.min.css",
-                      "~/Content/css/kendo.metro.min.css"));
+                      "~/Content/css/kendo.metro.min.css",
+                      "~/Content/kendo/2016.1.226/kendo.default.min.css",
+                      "~/Content/kendo/2016.1.226/kendo.default.min.css",
+                      "~/Content/kendo/2016.1.226/kendo.dataviz.default.min.css",
+                      "~/Content/css/style.css"));
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                      "~/Scripts/angular-1.5.6/angular.min.js",
                      "~/Scripts/angular-1.5.6/angular-route.min.js",

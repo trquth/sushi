@@ -10,17 +10,12 @@
     //})
     //jsonDataObj = JSON.stringify(object);
     var Id = $routeParams.productId;
-    var TheSscRequest = {
-        CallerKey: "Not Use Now",
-        CommandId: -10,
-        RequestParams:
-            [{
-                "Id": Id
-            }]
-    }
-    jsonDataObj = JSON.stringify(TheSscRequest);
-    sushiFactory.getProduct(TheSscRequest).then(function (response) {
-        $scope.product = angular.copy(response.dat);
+    sushiFactory.getProduct(Id).then(function (response) {
+        if (response.data.ResponseData.length!=0) {
+            $scope.product = angular.copy(response.data.ResponseData[0]);
+        } else {
+            $scope.product = null;
+        }       
     });
     //var original = product;
 });
