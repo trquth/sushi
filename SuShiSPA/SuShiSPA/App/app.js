@@ -9,23 +9,12 @@ sushiApp.config(["$routeProvider", function ($routeProvider) {
         templateUrl: "App/partials/product.html",
         controller: "detailController",
         resolve: {
-            //product: ["sushiFactory", "$route", function (sushiFactory, $route) {
-            //    var Id = $route.current.params.productId;
-            //    var TheSscRequest = {
-            //        CallerKey: "Not Use Now",
-            //        CommandId: -10,
-            //        RequestParams:
-            //            [{
-            //                "Id": Id
-            //            }]
-            //    }
-            //    //jsonDataObj = JSON.stringify(object);
-            //    return TheSscRequest;
-            //    //return sushiFactory2.getProduct(TheSscRequest).then(function (response) {
-            //    //    return  response.data;
-            //    //});
-            //}]
-
+           product:function (sushiFactory, $route) {
+                var Id = $route.current.params.productId;             
+                return sushiFactory.getProduct(Id).then(function (data) {
+                    return data;
+                });
+            }
         }
     }).otherwise({
         redirectTo: "/"

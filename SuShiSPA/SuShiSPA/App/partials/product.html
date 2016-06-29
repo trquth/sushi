@@ -1,7 +1,7 @@
-﻿<section id="content" ng-controller="detailController">
+﻿<section id="content" >
     <div id="details-top-image">
     </div>
-    <div id="details" >
+    <div id="details" ng-if="product!=null">
         <a id="navigate-prev"></a><div id="detail-info">
             <img class="main-image" ng-src="/Images/200/{{product.Image}}"
                  alt="{{product.Name}}" title="{{product.Name}}" />

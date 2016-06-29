@@ -1,4 +1,4 @@
-﻿sushiApp.controller("homeController", function ($scope, sushiFactory) {
+﻿sushiApp.controller("homeController", function ($scope, sushiFactory,product) {
     var object =JSON.stringify({
         "CallerKey": "Not Use Now",
         "CommandId": -1,
