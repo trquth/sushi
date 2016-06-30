@@ -7,5 +7,11 @@
     obj.getProduct = function (id) {
         return $http.get(serviceBase + "getproductbyIdaj" + "?Id=" + id);
     }
+    obj.getNextProduct = function (id) {
+        return $http.get(serviceBase + "getnextproductbyIdaj" + "?Id=" + id);
+    }
+    obj.getPreviousProduct = function (id) {
+        return $http.get(serviceBase + "getpreviousproductbyIdaj" + "?Id=" + id);
+    }
     return obj;
 }]);

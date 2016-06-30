@@ -2,7 +2,7 @@
     <div id="details-top-image">
     </div>
     <div id="details" ng-if="product!=null">
-        <a id="navigate-prev"></a><div id="detail-info">
+        <a id="navigate-prev" ng-click="nextproduct(product)"></a><div id="detail-info">
             <img class="main-image" ng-src="/Images/200/{{product.Image}}"
                  alt="{{product.Name}}" title="{{product.Name}}" />
             <div id="description">
@@ -29,7 +29,7 @@
                 <dt>Sugar</dt>
                 <dd>{{product.Stat.Sugar}}</dd>
             </dl>
-        </div><a id="navigate-next"></a>
+        </div><a id="navigate-next" ng-click="previousproduct(product)"></a>
     </div>
     <div id="details-bottom-image"></div>
 </section>
