@@ -26,7 +26,7 @@ namespace SuShiSPA
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
-            bundles.Add(new StyleBundle("~/bundles/sushicss").Include(                     
+            bundles.Add(new StyleBundle("~/bundles/sushicss").Include(
                       "~/Content/css/kendo.common.min.css",
                       "~/Content/css/kendo.rtl.min.css",
                       "~/Content/css/kendo.metro.min.css",
@@ -47,9 +47,11 @@ namespace SuShiSPA
                      "~/Content/js/sushi.js"));
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                     "~/App/app.js",
-                     "~/App/controllers/homeController.js",
+                    "~/App/directives/sushiDirective.js",
+                    "~/App/controllers/homeController.js",
                     "~/App/controllers/detailController.js",
-                    "~/App/services/sushiFactory.js"                  
+                    "~/App/controllers/shoppingCartController.js",
+                    "~/App/services/sushiFactory.js"
                     ));
         }
     }
