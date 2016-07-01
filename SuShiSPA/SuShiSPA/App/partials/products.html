@@ -7,7 +7,7 @@
                     <strong data-bind="text: name">{{product.Name}}</strong>
                     <span class="price"><span>$</span><span data-bind="text: price">{{product.Price}}</span></span>
                 </a>
-                <button class="add-to-cart" data-bind="click: addToCart">Add to cart</button>
+                <button class="add-to-cart" ng-click="addToCart(product,1)">Add to cart</button>
             </li>
         </ul>
     </div>
