@@ -149,6 +149,9 @@
     <Content Include="App\app.js" />
     <Content Include="App\controllers\detailController.js" />
     <Content Include="App\controllers\homeController.js" />
+    <Content Include="App\controllers\shoppingCartController.js" />
+    <Content Include="App\directives\sushiDirective.js" />
+    <Content Include="App\partials\itemscart.html" />
     <Content Include="App\partials\product.html" />
     <Content Include="App\partials\products.html" />
     <Content Include="App\services\sushiFactory.js" />
