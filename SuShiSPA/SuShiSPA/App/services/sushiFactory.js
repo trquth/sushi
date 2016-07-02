@@ -1,5 +1,6 @@
 ﻿sushiApp.factory("sushiFactory", ["$http", function ($http) {
-    var serviceBase = "http://localhost:49663/api/product/";
+    //var serviceBase = "http://localhost:49663/api/product/";
+    var serviceBase = "http://productapi.tqtco.com/api/product/";
     var obj = {};
     var data = [];
     obj.getProducts = function () {
