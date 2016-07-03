@@ -12,6 +12,10 @@ namespace SuShiSPA.Controllers
         {
             return View();
         }
+        public ActionResult Checkout()
+        {
+            return View();
+        }
 
         public ActionResult About()
         {

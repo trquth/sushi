@@ -12,11 +12,18 @@ function shoppingCart(cartName) {
     this.newLoadItems();
     // save items to local storage when unloading
     var self = this;
+    //$(window).unload(function () {
+    //    if (self.clearCart) {
+    //        self.clearItems();
+    //    }
+    //    self.saveItems();
+    //    self.clearCart = false;
+    //});
     $(window).unload(function () {
         if (self.clearCart) {
-            self.clearItems();
+            self.newClearItems();
         }
-        self.saveItems();
+        self.newSaveItems();
         self.clearCart = false;
     });
 }
@@ -108,7 +115,7 @@ shoppingCart.prototype.newAddItem = function (product, quantity) {
         var found = false;
         for (var i = 0; i < this.items.length && !found; i++) {
             var item = this.items[i];
-            if (item.product === product) {
+            if (item.product == product) {
                 found = true;
                 item.quantity = this.toNumber(item.quantity + quantity);
                 if (item.quantity <= 0) {
@@ -138,7 +145,17 @@ shoppingCart.prototype.getTotalPrice = function (sku) {
     }
     return total;
 }
-
+//New:get the total price for all items currently in the cart
+shoppingCart.prototype.newGetTotalPrice = function (product) {
+    var total = 0;
+    for (var i = 0; i < this.items.length; i++) {
+        var item = this.items[i];
+        if (product == null || item.product == product) {
+            total += this.toNumber(item.quantity * item.product.Price);
+        }
+    }
+    return total;
+}
 // get the total price for all items currently in the cart
 shoppingCart.prototype.getTotalCount = function (sku) {
     var count = 0;
@@ -150,13 +167,27 @@ shoppingCart.prototype.getTotalCount = function (sku) {
     }
     return count;
 }
-
+//New: get the total price for all items currently in the cart
+shoppingCart.prototype.newGetTotalCount = function (product) {
+    var count = 0;
+    for (var i = 0; i < this.items.length; i++) {
+        var item = this.items[i];
+        if (product == null || item.product== product) {
+            count += 1;
+        }
+    }
+    return count;
+}
 // clear the cart
 shoppingCart.prototype.clearItems = function () {
     this.items = [];
     this.saveItems();
 }
-
+//New
+shoppingCart.prototype.newClearItems = function () {
+    this.items = [];
+    this.newSaveItems();
+}
 // define checkout parameters
 shoppingCart.prototype.addCheckoutParameters = function (serviceName, merchantID, options) {
 

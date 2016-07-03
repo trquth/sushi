@@ -1,7 +1,7 @@
 ﻿var sushiApp = angular.module("sushiApp", ["ngRoute"]);
 sushiApp.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.when("/", {
-        title: "Sushiesss",
+        title: "Sushies",
         templateUrl: "App/partials/products.html",
         controller: "homeController"
     }).when("/detail-product/:productId", {
@@ -16,6 +16,10 @@ sushiApp.config(["$routeProvider", function ($routeProvider) {
                 });
             }
         }
+    }).when("/checkout/", {
+        title: "Checkout",
+        templateUrl: "App/partials/checkout.html",
+        controller: "checkoutController",
     }).otherwise({
         redirectTo: "/"
     });

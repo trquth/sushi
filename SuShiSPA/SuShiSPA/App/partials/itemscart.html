@@ -1,17 +1,17 @@
 ﻿
-<div id="shop-info" ng-controller="itemsCartController">
+<div id="shop-info" ng-controller="itemsCartController" ng-hide="contents.length==0">
     <ul  id="shop-list">
         <li class="selected-products-list" ng-repeat="item in contents">
-            <a class="view-selected-items" >
+            <a class="view-selected-items" ng-click="cart.newAddItem(item.product,-1000000)">
                 <img width="100" height="100"
                      ng-src="/Images/200/{{item.product.Image}}" />
             </a>
-            <span class="selected-image-price"><span></span>x<span></span></span>
+            <span class="selected-image-price"><span>{{item.quantity}}</span>x<span>{{item.product.Price | currency}}</span></span>
         </li>
     </ul>
     <div id="shopping-cart">
         <h3>your<br />shopping cart</h3>
-        <p class="total-price" data-bind="html: totalPrice"></p>
-        <a id="empty-cart" href="#" data-bind="click: emptyCart">empty cart</a><a id="checkout" href="#/checkout">checkout</a>
+        <p class="total-price">{{cart.newGetTotalPrice() | currency}}</p>
+        <a id="empty-cart" href="#" ng-click="cart.newClearItems()">empty cart</a><a id="checkout" href="#/checkout/">checkout</a>
     </div>
 </div>
