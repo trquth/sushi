@@ -1,4 +1,7 @@
-﻿<section id="content" >
+﻿<section id="pre-content">
+    <itemscart />
+</section>
+<section id="content" >
     <div id="details-top-image">
     </div>
     <div id="details" ng-if="product!=null">
@@ -10,7 +13,7 @@
                 <p>{{product.Description}}</p>
                 <div id="details-total">
                     <p id="price-quantity">{{product.Price}}</p>
-                    <button class="buy">Add to cart</button>
+                    <button class="buy" ng-click="cart.newAddItem(product,1)">Add to cart</button>
                 </div>
             </div>
         </div><div id="nutrition-info">

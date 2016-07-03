@@ -147,13 +147,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\app.js" />
+    <Content Include="App\controllers\checkoutController.js" />
     <Content Include="App\controllers\detailController.js" />
     <Content Include="App\controllers\homeController.js" />
-    <Content Include="App\controllers\shoppingCartController.js" />
+    <Content Include="App\controllers\inforCartController.js" />
+    <Content Include="App\controllers\itemsCartController.js" />
+    <Content Include="App\directives\notificationDirective.js" />
     <Content Include="App\directives\sushiDirective.js" />
+    <Content Include="App\partials\checkout.html" />
     <Content Include="App\partials\itemscart.html" />
+    <Content Include="App\partials\notificationcart.html" />
     <Content Include="App\partials\product.html" />
     <Content Include="App\partials\products.html" />
+    <Content Include="App\services\shoppingCart.js" />
     <Content Include="App\services\sushiFactory.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -4149,6 +4155,7 @@
     <Content Include="Scripts\kendo\2016.1.226\kendo.web.min.js.map" />
     <Content Include="Scripts\kendo\2016.1.226\kendo.webcomponents.min.js.map" />
     <Content Include="Scripts\kendo\2016.1.226\kendo.window.min.js.map" />
+    <Content Include="Views\Home\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

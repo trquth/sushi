@@ -22,5 +22,6 @@
             $scope.product = response.data.ResponseData[0];
         });
     }
-
+    // get store and cart from service
+    $scope.cart = sushiFactory.cart;
 }]);
