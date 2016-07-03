@@ -50,8 +50,9 @@ namespace SuShiSPA
                     "~/App/directives/sushiDirective.js",
                     "~/App/controllers/homeController.js",
                     "~/App/controllers/detailController.js",
-                    "~/App/controllers/shoppingCartController.js",
-                    "~/App/services/sushiFactory.js"
+                    "~/App/controllers/itemsCartController.js",
+                    "~/App/services/sushiFactory.js",
+                     "~/App/services/shoppingCart.js"
                     ));
         }
     }

@@ -1,7 +1,17 @@
-﻿<li class="selected-products-list">
-    <!--<a  class="view-selected-items">
-        <img width="100" height="100"
-             src="/images/200/#= item.image #" />
-    </a>-->
-    <span class="selected-image-price"><span></span>x<span></span></span>  
-</li>
+﻿
+<div id="shop-info" ng-controller="itemsCartController">
+    <ul  id="shop-list">
+        <li class="selected-products-list" ng-repeat="item in contents">
+            <a class="view-selected-items" >
+                <img width="100" height="100"
+                     ng-src="/Images/200/{{item.product.Image}}" />
+            </a>
+            <span class="selected-image-price"><span></span>x<span></span></span>
+        </li>
+    </ul>
+    <div id="shopping-cart">
+        <h3>your<br />shopping cart</h3>
+        <p class="total-price" data-bind="html: totalPrice"></p>
+        <a id="empty-cart" href="#" data-bind="click: emptyCart">empty cart</a><a id="checkout" href="#/checkout">checkout</a>
+    </div>
+</div>
