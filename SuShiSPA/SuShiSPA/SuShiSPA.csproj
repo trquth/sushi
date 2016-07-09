@@ -3435,6 +3435,7 @@
     <Content Include="Content\kendo\2016.1.226\kendo.silver.mobile.min.css.map" />
     <Content Include="Content\kendo\2016.1.226\kendo.uniform.min.css.map" />
     <Content Include="Content\kendo\2016.1.226\kendo.uniform.mobile.min.css.map" />
+    <None Include="Properties\PublishProfiles\sushiangularjs.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />

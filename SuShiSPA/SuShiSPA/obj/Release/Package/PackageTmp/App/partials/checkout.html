@@ -1,0 +1,34 @@
+﻿<style>
+    .k-numerictextbox .k-input {
+        width: 96%;
+        text-align: right;
+        padding-right: 5px !important;
+    }
+</style>
+<div id="checkout-top-image"></div>
+<div id="details-checkout" ng-controller="checkoutController">
+    <h1>Order Details</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody ng-hide="contents.length==0">
+            <tr ng-repeat="item in contents">
+                <td>
+                    <div class="cart-image-wrapper"><img ng-src="/Images/200/{{item.product.Image}}" /></div>
+                    <span class="product-name">{{item.product.Name}}</span>
+                </td>
+                <td>
+                    <input kendo-numeric-text-box k-min="0" k-max="100" k-ng-model="value" style="width: 100%;" />
+                <td><p class="table-price">{{item.product.Price | currency}}<p></td>
+            </tr>
+        </tbody>
+    </table>
+    <p id="total-checkout"><em>total:</em><span data-bind="text: totalPrice"></span></p>
+    <a class="cancel-order" href="#/">cancel order</a><button class="order-now">order now!</button>
+</div>
+<div id="checkout-bottom-image"></div>

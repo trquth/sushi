@@ -1,0 +1,18 @@
+﻿<section id="pre-content">
+    <itemscart />
+</section>
+<section id="content">
+    <div>
+        <ul id="main" class="k-widget k-listview" role="listbox">
+            <li class="products" ng-repeat="product in products">
+                <a class="view-details" href="#/detail-product/{{product.Id}}">
+                    <img class="main-image"  ng-src="/Images/200/{{product.Image}}" alt="{{product.Name}}" title="{{product.Name}}">
+                    <strong data-bind="text: name">{{product.Name}}</strong>
+                    <span class="price"><span>$</span><span data-bind="text: price">{{product.Price}}</span></span>
+                </a>
+                <!--<button class="add-to-cart" ng-click="cart.addItem(product.Id,product.Name,product.Price,1)">Add to cart</button>-->
+                <button class="add-to-cart" ng-click="cart.newAddItem(product,1)">Add to cart</button>
+            </li>
+        </ul>
+    </div>
+</section>

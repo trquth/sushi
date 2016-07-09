@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0043)http://demos.telerik.com/kendo-ui/websushi/ -->
+<html class="k-webkit k-webkit52">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        @charset "UTF-8";
+
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+
+        ng\:form {
+            display: block;
+        }
+
+        .ng-animate-shim {
+            visibility: hidden;
+        }
+
+        .ng-anchor {
+            position: absolute;
+        }
+    </style>
+    <title>Getting started with Single Page Applications with Kendo UI� | Demo</title>
+    <meta content="This Kendo UI demo shows a sample shopping cart system and how you can easily build SPAs with Kendo UI framework." name="description">
+    <style>
+        .k-fx-tileleft.k-fx-end .k-fx-next #details,
+        .k-fx-tileleft.k-fx-end .k-fx-current #details,
+        .k-fx-tileright.k-fx-end .k-fx-next #details,
+        .k-fx-tileright.k-fx-end .k-fx-current #details {
+            -webkit-transition: all 350ms ease-out;
+            -moz-transition: all 350ms ease-out;
+            transition: all 350ms ease-out;
+        }
+
+        .k-fx-tileleft.k-fx-start .k-fx-next #details {
+            -webkit-transform: translatex(100%);
+            -moz-transform: translatex(100%);
+            transform: translatex(100%);
+        }
+
+        .k-fx-tileleft.k-fx-end .k-fx-current #details {
+            -webkit-transform: translatex(-100%);
+            -moz-transform: translatex(-100%);
+            transform: translatex(-100%);
+        }
+
+
+        /* right */
+        .k-fx-tileright.k-fx-start .k-fx-next #details {
+            -webkit-transform: translatex(-100%);
+            -moz-transform: translatex(-100%);
+            transform: translatex(-100%);
+        }
+
+        .k-fx-tileright.k-fx-end .k-fx-current #details {
+            -webkit-transform: translatex(100%);
+            -moz-transform: translatex(100%);
+            transform: translatex(100%);
+        }
+    </style>
+    <link rel="stylesheet" href="./Content/css/style.css">
+    <link href="./Content/css/kendo.common.min.css" rel="stylesheet">
+    <link href="./Content/css/kendo.rtl.min.css" rel="stylesheet">
+    <link href="./Content/css/kendo.metro.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="application">
+        <div>
+            <div id="wrapper">
+                <div id="header">
+                    <h1 class="logo"><a href="#"></a></h1>
+                    <a id="cart-info" href="#">Shopping Cart<span><span>0</span> items</span></a>
+                </div>
+                <div id="main-section">
+                    <section id="content">
+                        <div>
+                            <ul data-role="listview" data-bind="source: items" data-template="item" id="main" class="k-widget k-listview" role="listbox">
+                                <li class="products" data-uid="16376089-f7bf-4dd8-ae0e-d77bda76052b" role="option" aria-selected="false">
+                                    <a class="view-details" href="http://demos.telerik.com/kendo-ui/websushi/#/menu/1">
+                                        <img class="main-image" src="./Content/images/200/sashimi-salad.jpg" alt="Sashimi salad" title="Sashimi salad">
+                                        <strong data-bind="text: name">Sashimi salad</strong>
+                                        <span class="price"><span>$</span><span data-bind="text: price">12</span></span>
+                                    </a>
+                                    <button class="add-to-cart" data-bind="click: addToCart">Add to cart</button>
+                                </li>
+
+                                <li class="products" data-uid="82d687bc-6b62-490a-bfe0-af42e53afb4a" role="option" aria-selected="false">
+                                    <a class="view-details" href="http://demos.telerik.com/kendo-ui/websushi/#/menu/2">
+                                        <img class="main-image" src="./Content/images/200/chirashi-sushi.jpg" alt="Chirashi sushi" title="Chirashi sushi">
+                                        <strong data-bind="text: name">Chirashi sushi</strong>
+                                        <span class="price"><span>$</span><span data-bind="text: price">21</span></span>
+                                    </a>
+                                    <button class="add-to-cart" data-bind="click: addToCart">Add to cart</button>
+                                </li>
+
+                                <li class="products" data-uid="5b95a90a-ed51-4075-9d7c-243652579cd7" role="option" aria-selected="false">
+                                    <a class="view-details" href="http://demos.telerik.com/kendo-ui/websushi/#/menu/3">
+                                        <img class="main-image" src="./Content/images/200/seaweed-salad.jpg" alt="Seaweed salad" title="Seaweed salad">
+                                        <strong data-bind="text: name">Seaweed salad</strong>
+                                        <span class="price"><span>$</span><span data-bind="text: price">17</span></span>
+                                    </a>
+                                    <button class="add-to-cart" data-bind="click: addToCart">Add to cart</button>
+                                </li>
+
+                                <li class="products" data-uid="e67cda16-3963-4fdc-8b35-57c6bf0674d0" role="option" aria-selected="false">
+                                    <a class="view-details" href="http://demos.telerik.com/kendo-ui/websushi/#/menu/4">
+                                        <img class="main-image" src="./Content/images/200/edamame.jpg" alt="Edamame" title="Edamame">
+                                        <strong data-bind="text: name">Edamame</strong>
+                                        <span class="price"><span>$</span><span data-bind="text: price">4</span></span>
+                                    </a>
+                                    <button class="add-to-cart" data-bind="click: addToCart">Add to cart</button>
+                                </li>
+
+                                <li class="products" data-uid="3d092c74-2fdd-4ab0-9451-b29fdf482c2c" role="option" aria-selected="false">
+                                    <a class="view-details" href="http://demos.telerik.com/kendo-ui/websushi/#/menu/5">
+                                        <img class="main-image" src="./Content/images/200/miso-soup.jpg" alt="Miso soup" title="Miso soup">
+                                        <strong data-bind="text: name">Miso soup</strong>
+                                        <span class="price"><span>$</span><span data-bind="text: price">4</span></span>
+                                    </a>
+                                    <button class="add-to-cart" data-bind="click: addToCart">Add to cart</button>
+                                </li>                               
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <div id="footer">
+                    <p>Learn more about Kendo UI<sup>�</sup> SPA at <a href="http://docs.telerik.com/kendo-ui/getting-started/framework/spa/overview">docs.telerik.com/kendo-ui</a>.</p>
+
+                    <p>Copyright � 2016, Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<section id="pre-content">
+    <itemscart />
+</section>
+<section id="content" >
+    <div id="details-top-image">
+    </div>
+    <div id="details" ng-if="product!=null">
+        <a id="navigate-prev" ng-click="nextproduct(product)"></a><div id="detail-info">
+            <img class="main-image" ng-src="/Images/200/{{product.Image}}"
+                 alt="{{product.Name}}" title="{{product.Name}}" />
+            <div id="description">
+                <h1>{{product.Name}}</h1>
+                <p>{{product.Description}}</p>
+                <div id="details-total">
+                    <p id="price-quantity">{{product.Price}}</p>
+                    <button class="buy" ng-click="cart.newAddItem(product,1)">Add to cart</button>
+                </div>
+            </div>
+        </div><div id="nutrition-info">
+            <h2>Nutritional Information</h2>
+            <dl>
+                <dt>Protein</dt>
+                <dd>{{product.Stat.Protein}}</dd>
+                <dt>Fat (total)</dt>
+                <dd>{{product.Stat.Fat}}</dd>
+                <dt>Carbohydrate</dt>
+                <dd>{{product.Stat.Carbohydrate}}</dd>
+                <dt>Energy (kJ)</dt>
+                <dd>{{product.Stat.Energy}}</dd>
+                <dt>Energy (kcal)</dt>
+                <dd>{{product.Stat.Energy}}</dd>
+                <dt>Sugar</dt>
+                <dd>{{product.Stat.Sugar}}</dd>
+            </dl>
+        </div><a id="navigate-next" ng-click="previousproduct(product)"></a>
+    </div>
+    <div id="details-bottom-image"></div>
+</section>
