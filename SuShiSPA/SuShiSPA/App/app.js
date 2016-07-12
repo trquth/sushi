@@ -2,11 +2,11 @@
 sushiApp.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.when("/", {
         title: "Sushies",
-        templateUrl: "App/partials/products.html",
+        templateUrl: "/App/partials/products.html",
         controller: "homeController"
     }).when("/detail-product/:productId", {
         title: "Sushi",
-        templateUrl: "App/partials/product.html",
+        templateUrl: "/App/partials/product.html",
         controller: "detailController",
         resolve: {
            product:function (sushiFactory, $route) {
@@ -18,7 +18,7 @@ sushiApp.config(["$routeProvider", function ($routeProvider) {
         }
     }).when("/checkout/", {
         title: "Checkout",
-        templateUrl: "App/partials/checkout.html",
+        templateUrl: "/App/partials/checkout.html",
         controller: "checkoutController",
     }).otherwise({
         redirectTo: "/"

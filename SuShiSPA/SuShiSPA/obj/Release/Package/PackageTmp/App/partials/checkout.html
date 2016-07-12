@@ -1,8 +1,60 @@
 ﻿<style>
-    .k-numerictextbox .k-input {
-        width: 96%;
-        text-align: right;
-        padding-right: 5px !important;
+    /* styles */
+    button, select, textarea, input, pre {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+    }
+
+    .sp-quantity {
+        width: 124px;
+        height: 42px;
+        font-family: "ProximaNova Bold", Helvetica, Arial;
+    }
+
+    .sp-minus {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #e1e1e1;
+        float: left;
+        text-align: center;
+    }
+
+    .sp-input {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #e1e1e1;
+        border-left: 0px solid black;
+        float: left;
+    }
+
+    .sp-plus {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #e1e1e1;
+        border-left: 0px solid #e1e1e1;
+        float: left;
+        text-align: center;
+    }
+
+    .sp-input input {
+        width: 36px;
+        height: 40px;
+        text-align: center;
+        font-family: "ProximaNova Bold", Helvetica, Arial;
+        border: none;
+    }
+
+        .sp-input input:focus {
+            border: 1px solid #e1e1e1;
+            border: none;
+        }
+
+    .sp-minus a, .sp-plus a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-top: 13px;
     }
 </style>
 <div id="checkout-top-image"></div>
@@ -23,7 +75,13 @@
                     <span class="product-name">{{item.product.Name}}</span>
                 </td>
                 <td>
-                    <input kendo-numeric-text-box k-min="0" k-max="100" k-ng-model="value" style="width: 100%;" />
+                    <div class="sp-quantity">
+                        <div class="sp-minus fff"> <a class="ddd" href="#">-</a></div>
+                        <div class="sp-input">
+                            <input type="text" class="quntity-input" value="1">
+                        </div>
+                        <div class="sp-plus fff"> <a class="ddd" href="#">+</a></div>
+                    </div>
                 <td><p class="table-price">{{item.product.Price | currency}}<p></td>
             </tr>
         </tbody>

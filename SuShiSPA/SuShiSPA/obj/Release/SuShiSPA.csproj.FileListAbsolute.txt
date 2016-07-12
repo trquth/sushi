@@ -46,3 +46,4 @@ C:\Users\thien.tran\Desktop\Git\Sushi\SuShiSPA\SuShiSPA\bin\System.Web.Http.xml
 C:\Users\thien.tran\Desktop\Git\Sushi\SuShiSPA\SuShiSPA\bin\System.Web.Http.WebHost.xml
 C:\Users\thien.tran\Desktop\Git\Sushi\SuShiSPA\SuShiSPA\obj\Release\SuShiSPA.dll
 C:\Users\thien.tran\Desktop\Git\Sushi\SuShiSPA\SuShiSPA\obj\Release\SuShiSPA.pdb
+C:\Users\thien.tran\Desktop\Git\Sushi\SuShiSPA\SuShiSPA\obj\Release\SuShiSPA.csprojResolveAssemblyReference.cache

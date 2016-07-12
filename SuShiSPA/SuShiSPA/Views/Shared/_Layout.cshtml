@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
-<html >
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="This Kendo UI demo shows a sample shopping cart system and how you can easily build SPAs with Kendo UI framework." name="description">
     <link rel="shortcut icon" type="image/ico" href="~/Images/Icon/sushi.png">
-    <title>SUSHI</title>   
+    <title>SUSHI</title>
     @Styles.Render("~/bundles/sushicss")
+    <link href="~/Content/css/style.css" rel="stylesheet" />
     <style>
         .k-fx-tileleft.k-fx-end .k-fx-next #details,
         .k-fx-tileleft.k-fx-end .k-fx-current #details,
@@ -48,7 +49,7 @@
     <div id="application">
         <div>
             <div id="wrapper">
-                @RenderBody()             
+                @RenderBody()
                 <div id="footer">
                     <p>Learn more about Kendo UI<sup>�</sup> SPA at <a href="http://docs.telerik.com/kendo-ui/getting-started/framework/spa/overview">docs.telerik.com/kendo-ui</a>.</p>
 
@@ -59,11 +60,27 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/angular")
+    @*@Scripts.Render("~/bundles/angular")*@
+    <script src="~/Scripts/angular-1.5.6/angular.min.js"></script>
+    <script src="~/Scripts/angular-1.5.6/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-1.5.6/angular-resource.min.js"></script>
+    <script src="~/Scripts/angular-1.5.6/angular-animate.min.js"></script>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
     @Scripts.Render("~/bundles/kendo")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/sushijs")
-    @Scripts.Render("~/bundles/app")
+    @*@Scripts.Render("~/bundles/app")*@
+    <script src="~/App/app.js"></script>
+    <script src="~/App/services/sushiFactory.js"></script>
+    <script src="~/App/services/shoppingCart.js"></script>
+    <script src="~/App/directives/sushiDirective.js"></script>
+    <script src="~/App/directives/notificationDirective.js"></script>
+    <script src="~/App/controllers/itemsCartController.js"></script>
+    <script src="~/App/controllers/inforCartController.js"></script>
+    <script src="~/App/controllers/homeController.js"></script>
+    <script src="~/App/controllers/detailController.js"></script>
+    <script src="~/App/controllers/checkoutController.js"></script>
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
