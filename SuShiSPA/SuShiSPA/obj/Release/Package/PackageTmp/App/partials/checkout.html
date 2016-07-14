@@ -76,17 +76,17 @@
                 </td>
                 <td>
                     <div class="sp-quantity">
-                        <div class="sp-minus fff"> <a class="ddd" href="#">-</a></div>
+                        <div class="sp-minus fff"> <a class="ddd"  ng-disabled="item.quantity <= 1" ng-click="cart.newAddItem(item.product,-1)">-</a></div>
                         <div class="sp-input">
-                            <input type="text" class="quntity-input" value="1">
+                            <input type="text" class="quntity-input" ng-model="item.quantity">
                         </div>
-                        <div class="sp-plus fff"> <a class="ddd" href="#">+</a></div>
+                        <div class="sp-plus fff"> <a class="ddd"  ng-disabled="item.quantity >= 1000" ng-click="cart.newAddItem(item.product,1)">+</a></div>
                     </div>
-                <td><p class="table-price">{{item.product.Price | currency}}<p></td>
+                <td><p class="table-price">{{item.product.Price*item.quantity | currency}}<p></td>
             </tr>
         </tbody>
     </table>
-    <p id="total-checkout"><em>total:</em><span data-bind="text: totalPrice"></span></p>
-    <a class="cancel-order" href="#/">cancel order</a><button class="order-now">order now!</button>
+    <p id="total-checkout"><em>total:</em><span >{{cart.newGetTotalPrice() | currency}}</span></p>
+    <a class="cancel-order" ng-disabled="cart.newGetTotalCount() < 1" ng-click="cart.newClearItems()">cancel order</a><button class="order-now">order now!</button>
 </div>
 <div id="checkout-bottom-image"></div>
